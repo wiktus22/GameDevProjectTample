@@ -9,7 +9,7 @@ DONE:
 - New model of level MW/WZ
 - Player movment MW 
 - Camera movment MW
-- Stamina level is show WZ
+- Stamina level is shown WZ
 - Simple Description WZ
 - Spikes and Ball kills MW
 - Doors open WZ
