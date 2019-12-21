@@ -4,6 +4,7 @@ Click it second time to put it down.
 You can run using shift key until you are out of your stamina.
 
 MW-Maksymilian Wojciech WZ-Wiktor Zawadzki
+
 DONE:
 - New model of level MW/WZ
 - Player movment MW 
