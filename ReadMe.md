@@ -7,12 +7,12 @@ You can run until you are out of your stamina(Stamina regenerates)
 You can use flashlight unitl you are out of power(Power regenerates)
 
 Controls:
-- Shift Runing
+- Shift Running
 - E key flashlight ON/OFF
-- WSAD Movment
+- WSAD movement
 - Space jump
 - Z key slow walking
-- Left mouse key hiting
+- Left mouse key hitting
 - Right mouse key grab/drop
 
 
