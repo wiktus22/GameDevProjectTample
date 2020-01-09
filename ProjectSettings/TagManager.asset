@@ -8,6 +8,15 @@ TagManager:
   - Ball
   - Spikes
   - CanGrab
+  - WalkingEnemy
+  - LoudEnemy
+  - LightningEnemy
+  - Art
+  - PlaySound
+  - BlueLight
+  - RedLight
+  - WhiteLight
+  - GreenLight
   layers:
   - Default
   - TransparentFX

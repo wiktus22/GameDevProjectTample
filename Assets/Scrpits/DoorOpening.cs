@@ -8,9 +8,11 @@ public class DoorOpening : MonoBehaviour
     [SerializeField] Transform lRightDoor;
     [SerializeField] Transform leftDoor;
     [SerializeField] Transform rightDoor;
+    public bool timerOn = false;
     int count = 0;
     bool playerOnSwitch;
     Vector3 lleft, lright, left, right;
+  
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -27,6 +29,7 @@ public class DoorOpening : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("DoorOpening");
                 leftDoor.transform.eulerAngles = new Vector3(0, 90 + (count * 15), 0);
                 rightDoor.transform.eulerAngles = new Vector3(0, 90 - (count * 15), 0);
                 lLeftDoor.transform.eulerAngles = new Vector3(0, 90 - (count * 15), 0);
@@ -42,6 +45,7 @@ public class DoorOpening : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            timerOn = true;
             playerOnSwitch = false;
             if (count == 0)
             {
@@ -52,6 +56,7 @@ public class DoorOpening : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("DoorClose");
                 leftDoor.transform.eulerAngles = new Vector3(0, left.y, 0);
                 rightDoor.transform.eulerAngles = new Vector3(0, right.y, 0);
                 lLeftDoor.transform.eulerAngles = new Vector3(0, lleft.y, 0);
@@ -60,6 +65,7 @@ public class DoorOpening : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("CanGrab"))
         {
+            timerOn = true;
             count--;
             if (playerOnSwitch == true)
             {
@@ -67,6 +73,7 @@ public class DoorOpening : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("DoorClose");
                 leftDoor.transform.eulerAngles = new Vector3(0, left.y - 15, 0);
                 rightDoor.transform.eulerAngles = new Vector3(0, right.y + 15, 0);
                 lLeftDoor.transform.eulerAngles = new Vector3(0, lleft.y + 15, 0);
@@ -76,6 +83,7 @@ public class DoorOpening : MonoBehaviour
     }
     void PlayerOnSwitch()
     {
+        FindObjectOfType<AudioManager>().Play("DoorOpening");
         leftDoor.transform.rotation = new Quaternion(0, 0, 0, 90);
         rightDoor.transform.rotation = new Quaternion(0, 90, 0, 0);
         lLeftDoor.transform.rotation = new Quaternion(0, 0, 0, 90);

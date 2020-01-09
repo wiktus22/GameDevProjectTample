@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controler;
 
-    public float movement = 12f;
+    public float movement = 10f;
 
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * -x + transform.forward * -z;
-
         controler.Move(move * movement * Time.deltaTime);
 
         if(Input.GetButtonDown("Jump") && isGrounded)
